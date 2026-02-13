@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Valentine 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            font-family: 'Baloo 2', cursive;
+        }
+
+        h1 {
+            font-size: 6vw;
+        }
+
+        h2 {
+            font-size: 4.5vw;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            font-size: 5vw;
+            border: none;
+            border-radius: 30px;
+            margin: 10px;
+            cursor: pointer;
+            font-family: 'Baloo 2', cursive;
+        }
+
+        #yesBtn { background-color: #00ff88; color: black; }
+        #noBtn { background-color: #ff3b3b; color: white; }
+
+        .shayari {
+            margin-top: 20px;
+            font-size: 4.5vw;
+            line-height: 1.6;
+            font-weight: 600;
+            padding: 0 15px;
+        }
+
+        .animation-area {
+            position: relative;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        .bears-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 12vw;
+            position: relative;
+        }
+
+        .bear {
+            font-size: 18vw;   /* Responsive bear size */
+            position: relative;
+        }
+
+        .bear-name {
+            position: absolute;
+            top: -6vw;
+            width: 100%;
+            text-align: center;
+            font-family: 'Baloo 2', cursive;
+            font-size: 5vw;   /* Responsive text size */
+            font-weight: bold;
+        }
+
+        .ring {
+            position: absolute;
+            font-size: 8vw;
+            top: 6vw;
+            left: -15vw;
+            animation: moveRing 2.5s forwards ease-out;
+        }
+
+        @keyframes moveRing {
+            0% { left: -15vw; }
+            100% { left: 58%; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Will You Be My Valentine Princess? 💖</h1>
+
+    <div>
+        <button id="yesBtn" class="btn">Yes 💕</button>
+        <button id="noBtn" class="btn">No 💔</button>
+    </div>
+
+    <script>
+        let yesBtn = document.getElementById("yesBtn");
+        let noBtn = document.getElementById("noBtn");
+
+        let yesSize = 20;
+        let noSize = 20;
+
+        noBtn.addEventListener("click", function() {
+            yesSize += 10;
+            noSize -= 4;
+
+            yesBtn.style.fontSize = yesSize + "px";
+            noBtn.style.fontSize = noSize + "px";
+
+            if (noSize <= 8) {
+                noBtn.style.display = "none";
+            }
+        });
+
+        yesBtn.addEventListener("click", function() {
+
+            document.body.innerHTML = `
+                <h1>Yeeee Godi Aajao Meri Betuu Ummmaaahhh ❤️😍</h1>
+                <h2>I Lummu Meri Bubuuuu Ummmaaahhh💕</h2>
+
+                <div class="shayari">
+                    Aapke naam se hi subah hoti hai meri ☀️❤️ <br>
+                    Aapke khayalon me hi raat dhalti hai 🌙✨ <br>
+                    Aap saath ho to har din Valentine hai 💕 <br>
+                    Warna duniya bhi thodi si adhoori lagti hai 💖
+                </div>
+
+                <div class="animation-area">
+                    <div class="bears-wrapper">
+                        
+                        <div class="bear">
+                            <div class="bear-name">Dudu</div>
+                            🧸
+                        </div>
+
+                        <div class="bear">
+                            <div class="bear-name">Bubuu</div>
+                            🧸
+                        </div>
+
+                        <div class="ring">💍</div>
+
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+
+</body>
+</html>
